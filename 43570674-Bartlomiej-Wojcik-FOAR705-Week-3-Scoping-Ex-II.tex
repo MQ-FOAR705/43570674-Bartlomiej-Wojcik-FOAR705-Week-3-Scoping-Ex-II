@@ -1,0 +1,44 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{FOAR705 Digital Humanities \\\ Proof of Concept Scoping Exercise II \\\  Computational Analysis}
+
+\author{Bart Wojcik}
+\date{22 August 2019}
+
+\begin{document}
+
+\maketitle
+
+\section{Objective}
+Speed up dictionary look up of Japanese words in digitally distributed works of Japanese literature.
+
+\subsection{Decomposition:}
+\begin{enumerate}
+    \item Input/get word
+    \item Determine ff necessary to de-inflect word and proceed as needed
+    \item Look up word
+    \item Render definition 
+\end{enumerate}
+
+\subsection{Pattern recognition:}
+\begin{enumerate}
+    \item Get input data    
+    \item Analyze input data
+    \item Process analysis results
+    \item Render output data
+\end{enumerate}
+
+\subsection{Algorithm design:}
+This section outlines the user inputs and the tasks that the machine needs to perform at each dictionary look-up request:
+\begin{enumerate}
+    \item Read text under mouse cursor
+    \item Determine word/phrase boundaries (as a reminder, Japanese language does not use spaces between words and the machine needs to be able to reliably pick out single and compound words as well as common set phrases in a longer string of text)
+    \item \textbf{If} impossible to determine single look-up term \textbf{then} supply likely candidates and proceed based on user selection, \textbf{else} proceed
+    \item Determine the part of speech (noun, na-adjective, i-adjective, verb etc)
+    \item \textbf{If} inflected part of speech detected \textbf{then} de-inflect and proceed; \textbf{else} proceed
+    \item Perform dictionary look-up
+    \item Output Japanese pronunciation, English definition and inflection details if applicable (for example: verb in past or passive-causative form, i-adjective in past form, verb stem)
+\end{enumerate}
+
+\end{document}
